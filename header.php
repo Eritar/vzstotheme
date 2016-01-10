@@ -44,7 +44,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<?php
-			echo ("<img src=\"/wp-content/uploads/2015/12/vzsto.png\">");
+			echo ("<img src=\"/wp-content/uploads/2016/01/vzsto.png\">");
 			if ( is_front_page() && is_home() ) : ?>
 				
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>				
@@ -67,22 +67,5 @@
 		<?php get_sidebar(); ?>
 	<div id="content" class="site-content">
 	
-	<div id="contentWrapper">
 
-		<div id="slideWrapper">
 
-			<div id="slideReel">
-
-				<div class="slide" id="slide1"><span class ="slide_text">Слайд1</span></div>
-
-				<div class="slide" id="slide2"><span class ="slide_text">Слайд2</span></div>
-
-				<div class="slide" id="slide3"><span class ="slide_text">Слайд3</span></div>
-
-				<div class="slide" id="slide4"><span class ="slide_text">Слайд1</span></div>
-
-			</div>
-		
-		</div>
-
-	</div>

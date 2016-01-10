@@ -1013,7 +1013,7 @@ img {
 }
 .menu-item>a:after {
 	display: block;
-	position: absolute;a
+	position: absolute;
 	left: 0;
 	bottom: -1px;
 	width: 0;
@@ -1220,22 +1220,18 @@ input[type="search"]:focus {
 
 
 
-#contentWrapper {
+
+#slider {
 	height: 400px;
 	width: 800px;
 	overflow: hidden;
-	margin: 20px auto;
-	padding: 0px;
-	background-color: #000;
-}
-#slideWrapper {
-	height: 400px;
-	width: 800px;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	padding: 0px;
 	background: white;
+	margin: 20px auto;
 }
-#slideReel {
+.slides {
 	height: 400px;
 	width: 3200px;
 	margin: 0px;
@@ -1247,19 +1243,45 @@ input[type="search"]:focus {
 	-webkit-transform-origin: 50% 50%;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: ease-out;
+	-moz-animation-play-state: running;
+	-moz-animation-name: slideIt;
+	-moz-animation-duration: 16s;
+	-moz-transform-origin: 50% 50%;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: ease-out;
+	animation-play-state: running;
+	animation-name: slideIt;
+	animation-duration: 16s;
+	transform-origin: 50% 50%;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+
+
 
 }
 
 .slide {
+	list-style: none;
+	height: 400px;
+	width: 800px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+.slide>a {
+	text-decoration: none;
+}
+.slide-image {
 	float: left;
 	height: 400px;
 	width: 800px;
 	margin: 0px;
 	padding: 0px;
-	background-color: #FFF;
+	border: none;
+	border-radius: 0;
+	position: absolute;
 }
-
-.slide_text {
+.description {
 	display: block;
 	visibility: hidden;
 	position: relative;
@@ -1271,7 +1293,7 @@ input[type="search"]:focus {
 	text-align: center;
 	transition: 0.5s;
 }
-#slideWrapper:hover .slide_text {
+#slider:hover .description {
 	visibility: visible;
 	top: 350px;
 }
@@ -1300,15 +1322,30 @@ input[type="search"]:focus {
 	-webkit-transform: translate(-2400px);
 	}
 }
-#slide1, #slide4 {
-background-image: url("http://lorempixel.com/800/400");
+ @keyframes slideIt {
+	 0% {
+	transform: translate(0px);
+	}
+	 16% {
+	transform: translate(0px);
+	}
+	 32% {
+	transform: translate(-800px);
+	}
+	 48% {
+	transform: translate(-800px);
+	}
+	 66% {
+	transform: translate(-1600px);
+	}
+	 82% {
+	transform: translate(-1600px);
+	}
+	 100% {
+	transform: translate(-2400px);
+	}
 }
-#slide2 {
-background-image: url("http://lorempixel.com/800/400");
-}
-#slide3 {
-background-image: url("http://lorempixel.com/800/400");
-}
+
 
 
 
@@ -1327,6 +1364,9 @@ td:not(:first-child) {
 	border-left: 1px solid #e0e0e0;
 }
 tr:nth-child(2n) {
+	background: #faf8f0;
+}
+tr:hover:not(:first-child){
 	background: #faf5e5;
 }
 
@@ -1339,7 +1379,7 @@ tr:nth-child(2n) {
 
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1023px) {
 	.menu-toggle {
 		display: block;
 	}
@@ -1378,13 +1418,14 @@ tr:nth-child(2n) {
     	margin: 0 2vw;
     	width: 95vw;
 	}
-
+	table {
+		display: none;
+	}
 	th,td {
 		padding: 0 5px;
-		font-size: 0.7em;
 	}
 	
-	#contentWrapper {
+	#slider {
 		display: none;
 	}
 
