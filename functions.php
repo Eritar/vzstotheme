@@ -172,3 +172,6 @@ function vzstotheme_scripts() {
 	wp_enqueue_script('menub-toggle', get_template_directory_uri() .'/js/functions.js', array( 'jquery' ));
 }
 add_action( 'wp_enqueue_scripts', 'vzstotheme_scripts' );
+
+remove_filter('the_content', 'wpautop');
+remove_filter( 'the_excerpt', 'wpautop' );
